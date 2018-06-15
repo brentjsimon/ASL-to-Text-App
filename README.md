@@ -1,1 +1,1 @@
-# ASL-to-Text-App-
+# ASL-to-Text-App
