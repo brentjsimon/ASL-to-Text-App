@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Practice AJAX</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    function do_ajax()
+    {
+      var req = new XMLHttpRequest();
+      var result = document.getElementById('result');
+      req.onreadystatechange = function()
+      {
+        if(this.readyState == 4 && this.status == 200)
+        {
+            result.innerHTML = this.responseText;
+        }
+        else
+        {
+          result.innerHTML = "waiting...";
+        }
+      }
+      req.open('POST', '/', true);
+      req.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+      req.send("name=" + document.getElementById('name').value);
+    }
+    function ajax()
+    {
+      var req = new XMLHttpRequest();
+      var result = document.getElementById('result');
+      req.onreadystatechange = function()
+      {
+        if(this.readyState == 4 && this.status == 200)
+        {
+          result.innerHTML = "hello world";
+        }
+        else
+        {
+          result.innerHTML = "nothing";
+        }
+      }
+      req.open('POST', '/', true);
+      req.setRequestHeader('content-type', 'application/        x-www-form-urlencoded; charset=UTF-8');
+      req.send("name=" + document.getElementById('name').value);
+    }
+    function openCamera()
+    {
+      if (navigator.getUserMedia)
+      {
+        navigator.getUserMedia(
+          {
+          video:
+            {
+              width: 1280,
+              height: 700
+            },
+              audio: false
+          },
+          function (localMediaStream)
+          {
+            var video = document.getElementById('camera-stream');
+              // url.createObjectURL is deprecated
+              // use htmlmediaelement
+              video.src = window.URL.createObjectURL(localMediaStream);
+          },
+          function (err)
+          {
+              console.log(err.name + ": " + err.message);
+          }
+        );
+      }
+      else
+      {
+        alert("browser does not support getUserMedia");
+      }
+    }
+    function hello()
+    {
+      alert("hello world");
+    }
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-sm bg-dark">
+        <ul class="navbar-nav">
+            <input type="button" value="translate" onclick="hello()">
+            <input type="button" value="set histogram" onclick="hello()">
+        </ul>
+    </nav>
+    <form action="index" method="post">
+      <label>Name:<input type="text" id="name" value="" /></label>
+      <button type="button" id="btn-post" onclick="do_ajax();">Click</button>
+      <div id="result"></div>
+    </form>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          <div id="video-container">
+            <video id="camera-stream" autoplay> </video>
+            <script type="text/javascript">
+              openCamera();
+            </script>
+          </div>
+        </div>
+        <div class="=col-xs-6">
+          <div class="float-right">
+            <div class="card border-dark mb-3" style="width: 18rem">
+              <div class="card-body">
+                <p class="card-text">hello</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
