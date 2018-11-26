@@ -245,7 +245,7 @@ class aslApp(QDialog):
         #return img.shape
         self.image_x,self.image_y = img.shape
 
-    model = load_model('cnn_model_keras2.h5')
+    model = load_model('cnn_model_keras4.h5')
 
     def keras_process_image(self, img):
         img = cv2.resize(img, (self.image_x, self.image_y))
@@ -260,7 +260,7 @@ class aslApp(QDialog):
         return max(pred_probab), pred_class
 
     def get_pred_text_from_db(self, pred_class):
-        conn = sqlite3.connect("gesture_db.db")
+        conn = sqlite3.connect("newgesture_db.db")
         cmd = "SELECT g_name FROM gesture WHERE g_id="+str(pred_class)
         cursor = conn.execute(cmd)
         for row in cursor:
