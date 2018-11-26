@@ -241,11 +241,11 @@ class aslApp(QDialog):
     image_y = 0    
 
     def get_image_size(self):
-        img = cv2.imread('gestures/0/100.jpg', 0)
+        img = cv2.imread('sample_image.jpg', 0)
         #return img.shape
         self.image_x,self.image_y = img.shape
 
-    model = load_model('cnn_model_keras4.h5')
+    model = load_model('cnn_model4.h5')
 
     def keras_process_image(self, img):
         img = cv2.resize(img, (self.image_x, self.image_y))
