@@ -4,16 +4,16 @@ Senior Project for San Jose State University's B.S. Computer Engineering Program
 Graduating Class of 2018
 
 ## Description 
-This project uses PYQT GUI to detect American Sign Language hand gestures through histogram recognition and outputs that into an output text box. 
+This project uses OpenCV and TensorFlow to detect American Sign Language (ASL) hand gestures and outputs the equivalent English text translation.
 
 ## Preresiquites and Installation Guide
 First you would need install these dependency through a terminal
 
 1. Python 3.6.0+
 2. Keras 2.2.4
-3. Tensorflow 1.12.0+
+3. TensorFlow 1.12.0+
 4. OpenCV 3.4.0
-5. PYQT5
+5. PyQt5
 6. Git
 
 ## How to Install Preresiquites
@@ -53,15 +53,16 @@ First you would need install these dependency through a terminal
 	python UI_ASL_App.py
 	```
 4. You should then be prompted by a GUI window that will access your camera
-5. Place your hand in front of the green square and then click the button **Capture Skin Color**
-	This will allow you the camera to capture an outline of your hand.
+5. Check the **Show histogram sampling** box
+5. Place your hand in front of the camera to so that it covers all of the green squares and then click the button **Capture Skin Color**
+	This will allow the camera to capture your skin color.
 	Keep on clicking the button until you see a clear white space histogram of your hand
-6. Once you are satified with your captured white hand, select the **Start Translation** bubble 
+6. Once you are satified with your captured white hand, check the **Translation** box 
 7. From here, you may gesture any American Sign Language letter, number or gesture. 
 
 
 ## Development Tools Used
-1. PYQT5 Tools 
+1. PyQt5 Tools 
 2. PGAdmin3+
 
 ## Hardware 
