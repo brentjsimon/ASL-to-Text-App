@@ -10,7 +10,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 # Get number of gesture IDs
 def get_num_of_classes():
-    return len(os.listdir('data/gestures/'))
+    return 43
 	
 # Compiles a CNN Model, based off of Tensorflow MNIST Tutorial to building a CNN Model with Estimators: https://www.tensorflow.org/tutorials/estimators/cnn
 def cnn_model_fn(features, labels, mode):
