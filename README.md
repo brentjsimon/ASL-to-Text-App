@@ -86,3 +86,7 @@ Make sure these python libraries are installed as well
 - Danielle Maak 
 - Andie Sanchez 
 - Melissa Lauzon
+
+## References
+
+Saha, D. (2018). Sign-Language (Version 1): A very simple CNN project. figshare. https://doi.org/10.6084/m9.figshare.6241901.v1
